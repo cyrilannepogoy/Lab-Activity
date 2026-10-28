@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Services Dashboard | DSSC Student Portal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link (first focusable element) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Sidebar (persistent on desktop, off-canvas drawer on mobile) -->
+    <aside id="sidebar" class="sidebar">
+        <div class="sidebar-brand">
+            <span class="sidebar-logo" aria-hidden="true">DS</span>
+            <div class="sidebar-title">
+                <p class="site-title">DSSC Student Portal</p>
+                <p class="site-subtitle">Student Services Dashboard</p>
+            </div>
+        </div>
+        <nav aria-label="Main navigation">
+            <ul class="sidebar-nav-list">
+                <li class="sidebar-nav-item">
+                    <a href="#summary" class="sidebar-link" aria-current="page">
+                        <svg class="sidebar-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <rect x="2" y="3" width="6" height="7" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="12" y="3" width="6" height="7" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="2" y="12" width="6" height="7" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="12" y="12" width="6" height="7" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="sidebar-label">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#enrollment" class="sidebar-link">
+                        <svg class="sidebar-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <rect x="2" y="4" width="16" height="14" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <line x1="8" y1="4" x2="8" y2="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M4 8h12v8H4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                        <span class="sidebar-label">Enrollment</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#grades" class="sidebar-link">
+                        <svg class="sidebar-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <line x1="4" y1="16" x2="4" y2="4" stroke="currentColor" stroke-width="2"/>
+                            <line x1="8" y1="12" x2="8" y2="4" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="8" x2="12" y2="4" stroke="currentColor" stroke-width="2"/>
+                            <line x1="16" y1="4" x2="16" y2="16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="sidebar-label">Grades</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#recent-requests" class="sidebar-link">
+                        <svg class="sidebar-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <rect x="2" y="4" width="16" height="12" rx="1" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <line x1="8" y1="4" x2="8" y2="16" stroke="currentColor" stroke-width="2"/>
+                            <line x1="12" y1="4" x2="12" y2="16" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="sidebar-label">Requests</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#clearance" class="sidebar-link">
+                        <svg class="sidebar-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <circle cx="10" cy="10" r="7" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M7 11l2 2 4-4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="sidebar-label">Clearance</span>
+                    </a>
+                </li>
+                <li class="sidebar-nav-item">
+                    <a href="#" class="sidebar-link sidebar-link--logout">
+                        <svg class="sidebar-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                            <path d="M14 4h-6v12h6v-6h4v-4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <polyline points="16,12 14,14 16,16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="sidebar-label">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <p class="sidebar-context">BSIT - 3rd Year</p>
+    </aside>
+
+    <!-- Backdrop overlay for the off-canvas drawer -->
+    <div class="overlay" hidden></div>
+
+    <!-- Persistent Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <button class="menu-toggle" aria-expanded="false" aria-controls="sidebar" aria-label="Toggle navigation">
+                <svg class="menu-icon" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                    <line x1="4" y1="6" x2="16" y2="6" stroke="currentColor" stroke-width="2"/>
+                    <line x1="4" y1="10" x2="16" y2="10" stroke="currentColor" stroke-width="2"/>
+                    <line x1="4" y1="14" x2="16" y2="14" stroke="currentColor" stroke-width="2"/>
+                </svg>
+            </button>
+            <div class="page-title">
+                <h1 class="site-title">Student Services Dashboard</h1>
+                <p class="site-subtitle">DSSC Student Portal</p>
+            </div>
+            <div class="profile-badge" role="group" aria-label="Current user" data-user-name="Cyril Anne L Pogoy">
+                <span class="profile-avatar" aria-hidden="true"></span>
+                <div class="profile-details">
+                    <p class="profile-name"></p>
+                    <p class="profile-id">BSIT - 3rd Year</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Canvas -->
+    <main id="main-content" class="main-content">
+        <!-- Summary Metrics Section (PRIMARY) -->
+        <section id="summary" class="section summary-section" aria-labelledby="summary-heading">
+            <header class="section-header">
+                <h2 id="summary-heading" class="section-title">Welcome back, <span id="greeting-name"></span></h2>
+                <p class="section-description">You have 2 clearance items to settle before you can enroll.</p>
+            </header>
+
+            <div class="metric-grid">
+                <!-- Metric Card 1: Active Units -->
+                <article class="metric-card" aria-labelledby="metric-active-units">
+                    <div class="metric-body">
+                        <div class="metric-head">
+                            <span class="metric-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v17H6.5A2.5 2.5 0 0 0 4 22z"/>
+                                    <path d="M4 5.5v16.5M8 7h8M8 11h7"/>
+                                </svg>
+                            </span>
+                            <h3 id="metric-active-units" class="metric-title">Active units</h3>
+                        </div>
+                        <p class="metric-value">21</p>
+                        <p class="metric-note">Enrolled this term</p>
+                    </div>
+                </article>
+
+                <!-- Metric Card 2: Pending Requests -->
+                <article class="metric-card" aria-labelledby="metric-pending-requests">
+                    <div class="metric-body">
+                        <div class="metric-head">
+                            <span class="metric-icon metric-icon--neutral" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <circle cx="12" cy="12" r="9"/>
+                                    <path d="M12 7v5l3 2"/>
+                                </svg>
+                            </span>
+                            <h3 id="metric-pending-requests" class="metric-title">Pending requests</h3>
+                        </div>
+                        <p class="metric-value" id="metric-pending-value">3</p>
+                        <p class="metric-note">Awaiting approval/action</p>
+                    </div>
+                </article>
+
+                <!-- Metric Card 3: Clearance Deficiencies (urgent/warning) -->
+                <article class="metric-card metric-card--warning" aria-labelledby="metric-clearance-deficiencies">
+                    <div class="metric-body">
+                        <div class="metric-head">
+                            <span class="metric-icon metric-icon--warning" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M10.3 3.9 2.7 17a2 2 0 0 0 1.7 3h15.2a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>
+                                    <path d="M12 9v4m0 4h.01"/>
+                                </svg>
+                            </span>
+                            <h3 id="metric-clearance-deficiencies" class="metric-title">Clearance deficiencies</h3>
+                        </div>
+                        <p class="metric-value">2</p>
+                        <p class="metric-note">Settle these before enrollment</p>
+                        <span class="metric-action-tag">Needs action</span>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Recent Requests Table Section (SECONDARY) -->
+        <section id="recent-requests" class="section requests-section" aria-labelledby="requests-heading">
+            <header class="section-header">
+                <h2 id="requests-heading" class="section-title">Recent Requests</h2>
+                <p class="section-description">Track the status of your most recent service requests.</p>
+            </header>
+
+            <!-- Responsive table wrapper (overflow-x safety net) -->
+            <div class="table-wrapper" role="region" aria-labelledby="requests-heading" tabindex="0">
+                <table class="requests-table">
+                    <caption class="table-caption">List of your recent student service requests filed within the current term</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Request ID</th>
+                            <th scope="col">Service Type</th>
+                            <th scope="col">Date Filed</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="requests-table-body">
+                        <tr>
+                            <td data-label="Request ID">REQ-2026-0142</td>
+                            <td data-label="Service Type">Document Requisition</td>
+                            <td data-label="Date Filed">Oct 20, 2026</td>
+                            <td data-label="Status"><span class="status-badge status-badge--pending"><span class="status-dot" aria-hidden="true"></span><span class="status-text">Pending</span></span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Request ID">REQ-2026-0138</td>
+                            <td data-label="Service Type">Subject Overload Permit</td>
+                            <td data-label="Date Filed">Oct 18, 2026</td>
+                            <td data-label="Status"><span class="status-badge status-badge--approved"><span class="status-dot" aria-hidden="true"></span><span class="status-text">Approved</span></span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Request ID">REQ-2026-0131</td>
+                            <td data-label="Service Type">Certificate of Enrollment</td>
+                            <td data-label="Date Filed">Oct 15, 2026</td>
+                            <td data-label="Status"><span class="status-badge status-badge--rejected"><span class="status-dot" aria-hidden="true"></span><span class="status-text">Rejected</span></span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Request ID">REQ-2026-0124</td>
+                            <td data-label="Service Type">Good Moral Certificate</td>
+                            <td data-label="Date Filed">Oct 12, 2026</td>
+                            <td data-label="Status"><span class="status-badge status-badge--for-pickup"><span class="status-dot" aria-hidden="true"></span><span class="status-text">For Pickup</span></span></td>
+                        </tr>
+                        <tr>
+                            <td data-label="Request ID">REQ-2026-0117</td>
+                            <td data-label="Service Type">Clearance Application</td>
+                            <td data-label="Date Filed">Oct 09, 2026</td>
+                            <td data-label="Status"><span class="status-badge status-badge--pending"><span class="status-dot" aria-hidden="true"></span><span class="status-text">Pending</span></span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- New Service Request Form Section (UTILITY/form panel) -->
+        <section id="new-request" class="section form-section" aria-labelledby="form-heading">
+            <header class="section-header">
+                <h2 id="form-heading" class="section-title">Submit a New Service Request</h2>
+                <p class="section-description">Fill out the form below to request a document or academic permit.</p>
+            </header>
+
+            <!-- Success/Feedback message region (aria-live) -->
+            <div id="form-status" class="form-status" role="status" aria-live="polite"></div>
+
+            <form id="request-form" class="service-request-form" action="#" method="post" novalidate aria-labelledby="form-heading">
+                <!-- Field 1: Service Category -->
+                <div class="form-group">
+                    <label for="service-category" class="form-label">Service Category <span class="required" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+                    <select id="service-category" name="service-category" class="form-control" required aria-required="true" aria-describedby="service-category-help service-category-error">
+                        <option value="" selected disabled>-- Select a service --</option>
+                        <option value="document-requisition">Document Requisition</option>
+                        <option value="subject-overload-permit">Subject Overload Permit</option>
+                        <option value="certificate-enrollment">Certificate of Enrollment</option>
+                        <option value="clearance-application">Clearance Application</option>
+                    </select>
+                    <small id="service-category-help" class="form-help">Choose the service you would like to request.</small>
+                    <p id="service-category-error" class="error-msg" role="alert"></p>
+                </div>
+
+                <!-- Field 2: Reason / Request Details -->
+                <div class="form-group">
+                    <label for="request-details" class="form-label">Reason / Request Details <span class="required" aria-hidden="true">*</span><span class="visually-hidden"> (required)</span></label>
+                    <textarea id="request-details" name="request-details" class="form-control" rows="5" required minlength="20" maxlength="300" aria-required="true" aria-describedby="request-details-help request-details-error"></textarea>
+                    <span id="char-counter" class="char-counter">0 / 300</span>
+                    <small id="request-details-help" class="form-help">Provide specific details such as purpose, number of copies, or overload justification (20-300 characters).</small>
+                    <p id="request-details-error" class="error-msg" role="alert"></p>
+                </div>
+
+                <!-- Field 3: Preferred Pickup Date (Optional) -->
+                <div class="form-group">
+                    <label for="pickup-date" class="form-label">Preferred Pickup Date</label>
+                    <input type="date" id="pickup-date" name="pickup-date" class="form-control" aria-describedby="pickup-date-help pickup-date-error">
+                    <small id="pickup-date-help" class="form-help">Optional. When you would like to collect your document.</small>
+                    <p id="pickup-date-error" class="error-msg" role="alert"></p>
+                </div>
+
+                <!-- Form Actions (Flexbox button group) -->
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Submit request</button>
+                    <button type="reset" class="btn btn-secondary">Reset</button>
+                    <button type="button" class="btn btn-save" id="save-draft" disabled>Save draft</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="site-footer">
+        <div class="footer-container">
+            <p class="footer-text">&copy; 2026 Davao del Sur State College. All rights reserved.</p>
+            <p class="footer-text">Office of the Registrar &bull; Registrar's Building &bull; registrar@dssc.edu.ph</p>
+            <nav class="footer-nav" aria-label="Footer links">
+                <a href="#">Help &amp; Support</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Use</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

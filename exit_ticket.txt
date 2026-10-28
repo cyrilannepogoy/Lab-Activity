@@ -1,0 +1,11 @@
+IT631 Lab 1 - Exit Ticket
+Name: Pogoy, Cyril Anne L.
+
+1. Layout Architecture
+Between a top navigation and a sidebar shell, a sidebar shell is better suited for an administrative DSSC portal that manages enrollments, grades and faculty records. A sidebar can hold many persistent, grouped links without running out of horizontal space, and it keeps the main canvas free for dense tables and forms. It also lets admins switch between modules quickly while keeping their place in the hierarchy. I implemented this as a persistent sidebar on desktop and an off-canvas drawer on mobile.
+
+2. Responsive Tactics
+When scaling a table down to a 360px viewport, I would transform each row into a stacked card where every cell shows its column label (using data-label and td::before), instead of shrinking the text. For columns that cannot be stacked, I would wrap the table in an overflow-x: auto container so only the table scrolls and not the whole page. I would also prioritize or hide low-importance columns on small screens.
+
+3. Accessibility
+Removing outlines with outline: none without a replacement makes it impossible for keyboard and screen-magnifier users to see which element currently has focus, so they get lost while tabbing through the page. In my prototype I used :focus-visible with a 3px solid outline and outline-offset on every link and button (light colored on the dark sidebar), and the sidebar uses contrast-safe white text on a navy background. Invalid fields also get a red border with a visible error message, so users relying on keyboard navigation always know where they are and what needs correction.
